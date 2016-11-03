@@ -9,7 +9,7 @@ GND  GND             	 	     GND    GND
      아날로그 회전센서1               회전센서2
 5V   Vcc                        5V    Vcc
 GND  GND                        GND   GND
-A2   OUT                        A3    OUT
+A2   OUT                        A3    OUT           회전값을 읽음
 
 
      7Seg
