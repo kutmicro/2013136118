@@ -8,5 +8,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   paddle1Val = analogRead(2);
+   paddle1Val = map(paddle1Val, 0, 600, 0, 5); //가변저항의 값을, 저장후, 매트릭스 좌표값으로 변환
   Serial.println(paddle1Val);
 }
