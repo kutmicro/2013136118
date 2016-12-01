@@ -1,0 +1,47 @@
+#include <LedControl.h>
+
+LedControl myMatrix = LedControl(2, 4, 3, 2);//매트릭스 모듈 연결.
+
+//            col
+//           0 1 2 3 ... 
+//       .
+//       . 
+//       2
+//row    1
+//       0
+//            vcc GND                     vcc GND
+//          
+//         Matrix 1                      Matrix 2
+//     myMatrix.setLed(0, 0, 0, HIGH);    myMatrix.setLed(1, 0, 0, HIGH);
+//           setLed(매트릭스번호, col, row, HIGH)
+
+int paddle1 = 2, paddle1Val;//가변저항 센서의 핀과, 값을 저장하는 변수
+
+void setup() {
+    myMatrix.shutdown(0, false);
+    myMatrix.shutdown(1, false);
+  myMatrix.setIntensity(0, 8);
+  myMatrix.setIntensity(1, 8);
+  myMatrix.clearDisplay(0);
+   myMatrix.clearDisplay(1);
+  randomSeed(7);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  paddle1Val = analogRead(paddle1);
+  myMatrix.setLed(0, 0, 0, HIGH);
+  myMatrix.setLed(0, 6, 0, HIGH);
+  myMatrix.setLed(0, 7, 0, HIGH);
+  myMatrix.setLed(1, 0, 0, HIGH);
+  myMatrix.setLed(1, 5, 6, HIGH);
+//    for (int row = 0; row < 16; row++) {
+//    for (int col = 0; col < 8; col++) {
+//      myMatrix.setLed(row / 8, row % 8, col, true) ;
+//      delay(50) ;
+//    }
+//    myMatrix.clearDisplay(0);
+//    myMatrix.clearDisplay(1);
+//  }
+}
