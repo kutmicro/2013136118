@@ -6,10 +6,10 @@ GND  GND             	 	     GND    GND
 4    CLK            		     4      CLK
 
 
-     아날로그 회전센서1               회전센서2
-3.3v  Vcc                       3.3V    Vcc
-GND  GND                        GND   GND
-A2   OUT                        A3    OUT           회전값을 읽음
+     아날로그 회전센서1               회전센서2                                3
+3.3v  Vcc                       3.3V    Vcc                                3.3v
+GND  GND                        GND   GND                                  GND
+A2   OUT                        A3    OUT           회전값을 읽음           A4  // 속도조절용
 
 
      7Seg
