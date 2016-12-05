@@ -45,7 +45,7 @@ void loop() {
   paddle3Val = analogRead(paddle3);
   paddle1Val = map(paddle1Val, 0, 600, 0, 5);
   paddle2Val = map(paddle2Val, 0, 600, 0, 5);
-  paddle3Val = map(paddle3Val, 0, 600, 100,500);
+  paddle3Val = map(paddle3Val, 0, 600, 50,300); //속도
 
   speed = paddle3Val;
   column += directionX;
