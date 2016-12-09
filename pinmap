@@ -18,6 +18,12 @@ GND  -
 A4   D
 A5   C
 
-switch
-10
-GND
+lcd module
+D7  22
+D6  5
+D5  23
+D4  6
+GND  gnd
+E   11
+RS   12 
+VCC  5v
