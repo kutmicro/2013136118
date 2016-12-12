@@ -59,7 +59,7 @@ void loop() {
   column += directionX;
   row += directionY;
 
-  //2p 막대 (왼쪽 매트릭스)
+  //1p 막대 (왼쪽 매트릭스)
   if (column < 8) {
     //공이 막대에 닿았을때
     if (column == 1 && directionX == -1 && (paddle1Val == row || paddle1Val + 1 == row)) {
@@ -77,7 +77,7 @@ void loop() {
     }
   }
 
-  //1p 막대 (오른쪽 매트릭스)
+  //2p 막대 (오른쪽 매트릭스)
   if (column > 7) {
     //공이 막대에 닿았을때
     if (column == 14 && directionX == 1 && (paddle2Val == row || paddle2Val + 1 == row)) {
@@ -164,5 +164,5 @@ void oops() {//화면 깜빡 깜빡하고 초기화
   }
   //다음 공의 위치 랜덤으로 지정
   column = random(4) + 6;
-  row = random(7);
+  row = random(4)+2;
 }
