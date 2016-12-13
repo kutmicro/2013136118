@@ -152,15 +152,15 @@ void loop() {
   myMatrix.setLed(1, 7, paddle2Val + 1, HIGH);
 
   if(buttonstate==1) { //버튼이 눌러진 상태일때 
-    oops();
     scoreClear();
+    oops();
   }
   
   //3번센서에서 받은값으로 delay해준다
   delay(speed);
 }
 
-void scoreClear() {
+void scoreClear() { //버튼이 눌렸을 때 점수 초기화 
   scoreA=0;
   scoreB=0;
 }
