@@ -1,0 +1,16 @@
+int button = 10;    //디지털 10
+int buttonstate = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(button, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  buttonstate = digitalRead(button);                               
+  Serial.print(buttonstate);
+  Serial.print("\n");
+  delay(1000);
+}
