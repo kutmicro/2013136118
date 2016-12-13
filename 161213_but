@@ -42,7 +42,35 @@ void setup() {
   pinMode(button, INPUT);
   randomSeed(7);
 }
-
+void loop() {
+  //play();
+  buttonstate = digitalRead(button);
+  if (buttonstate == 1) { //버튼이 눌러진 상태일때 리셋 
+    scoreClear();
+    oops();
+  } else { //버튼이 안눌러진 상태일때
+    if (scoreA == 5 || scoreB == 5) { //1p, 2p가 5점이 됬다면
+      if (scoreA == 5) {
+        lcd.setCursor(0, 0);
+        lcd.print("A Win !!@@!!");
+        lcd.setCursor(0, 1);
+        lcd.print("A Win !!@@!!");
+      }
+      else if (scoreB == 5) {
+        lcd.setCursor(0, 0);
+        lcd.print("B Win !!@@!!");
+        lcd.setCursor(0, 1);
+        lcd.print("B Win !!@@!!");
+      }
+      myMatrix.clearDisplay(0);
+      myMatrix.clearDisplay(1);
+    } else { //점수가 5점이 안되었으면 게임 진행 
+      play();  
+    }
+  }
+  //3번센서에서 받은값으로 delay해준다
+  delay(speed);
+}
 void scoreClear() { //버튼이 눌렸을 때 점수 초기화
   scoreA = 0;
   scoreB = 0;
@@ -65,6 +93,7 @@ void oops() {//화면 깜빡 깜빡하고 초기화
 }
 
 void play() {
+  lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("A: "); lcd.print(scoreA);
   lcd.setCursor(0, 1);
@@ -77,7 +106,7 @@ void play() {
   paddle1Val = map(paddle1Val, 0, 600, 0, 6);
   paddle2Val = map(paddle2Val, 0, 600, 0, 6);
   paddle3Val = map(paddle3Val, 0, 600, 50, 300);
-  buttonstate = digitalRead(button);
+  //buttonstate = digitalRead(button);
 
   speed = paddle3Val;
   column += directionX;
@@ -158,31 +187,4 @@ void play() {
 
 }
 
-void loop() {
-  //play();
-  if (buttonstate == 1) { //버튼이 눌러진 상태일때 리셋 
-    scoreClear();
-    oops();
-  } else { //버튼이 안눌러진 상태일때 게임 진행 
-    if (scoreA == 5 || scoreB == 5) { //1p, 2p가 5점이 됬다면
-      if (scoreA == 5) {
-        lcd.setCursor(0, 0);
-        lcd.print("A Win !!@@!!");
-        lcd.setCursor(0, 1);
-        lcd.print("A Win !!@@!!");
-      }
-      else if (scoreB == 5) {
-        lcd.setCursor(0, 0);
-        lcd.print("B Win !!@@!!");
-        lcd.setCursor(0, 1);
-        lcd.print("B Win !!@@!!");
-      }
-      myMatrix.clearDisplay(0);
-      myMatrix.clearDisplay(1);
-    } else { //점수가 5점이 안되었으면 게임 진행 
-      play();  
-    }
-  }
-  //3번센서에서 받은값으로 delay해준다
-  delay(speed);
-}
+
