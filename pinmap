@@ -27,3 +27,8 @@ GND  gnd
 E   11
 RS   12 
 VCC  5v
+
+
+buzzer
++  9
+-  GND
