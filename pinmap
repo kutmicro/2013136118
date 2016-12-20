@@ -12,11 +12,9 @@ GND  GND                        GND   GND                                  GND
 A2   OUT                        A3    OUT           회전값을 읽음           A4  // 속도조절용
 
 
-     7Seg
-5V   +
-GND  -
-A4   D
-A5   C
+button
++ 10
+- GNV
 
 lcd module
 D7  22
