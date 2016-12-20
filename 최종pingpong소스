@@ -34,16 +34,16 @@ int buzzerPin = 9; // 아두이노 9번핀, 부저
 void setup() {
   scoreA = 0;
   scoreB = 0;
-  lcd.begin(16, 2);
-  myMatrix.shutdown(0, false);
-  myMatrix.shutdown(1, false);
-  myMatrix.setIntensity(0, 8);
-  myMatrix.setIntensity(1, 8);
+  lcd.begin(16, 2); //lcd 16x2 설정
+  myMatrix.shutdown(0, false); //절전모드 끄기
+  myMatrix.shutdown(1, false); //절전모드 끄기
+  myMatrix.setIntensity(0, 8); //밝기설정(모듈주소, 0~15값)
+  myMatrix.setIntensity(1, 8); //밝기설정(모듈주소, 0~15값)
   myMatrix.clearDisplay(0);
   myMatrix.clearDisplay(1);
-  pinMode(button, INPUT);
-  pinMode(buzzerPin, OUTPUT);
-  randomSeed(7);
+  pinMode(button, INPUT); //핀설정, 버튼 디지털 10번
+  pinMode(buzzerPin, OUTPUT); //핀설정, 부저 디지털 9번
+  randomSeed(7); //난수 지정
 }
 void loop() {
   buttonstate = digitalRead(button);
