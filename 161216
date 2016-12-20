@@ -71,7 +71,6 @@ void loop() {
       oops();  
     }
   } else if (scoreA == 0 && scoreB == 0 && start==false) { //게임시작전
-    lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("  pingpong");
   }
